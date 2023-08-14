@@ -15,12 +15,12 @@ int is_palindrome(listint_t **head);
  */
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *node = *head, *next, *previous = NULL;
+	listint_t *point = *head, *next, *previous = NULL;
 
 	while (point)
 	{
 		next = point->next;
-		point->next = prev;
+		point->next = previous;
 		previous = point;
 		point = next;
 	}
