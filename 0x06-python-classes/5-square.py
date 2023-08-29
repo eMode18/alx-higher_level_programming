@@ -3,10 +3,18 @@
 class Square:
 
     def __init__(self, size):
+
+        """square init
+
+        Args:
+            size: type int, new square size
+        """
+
         self.size = size
 
     @property
     def size(self):
+        """get size"""
         return (self.__size)
 
     @size.setter
@@ -18,6 +26,7 @@ class Square:
         self.__size = value
 
     def area(self):
+        """find area"""
         return (self.__size * self.__size)
 
     def my_print(self):

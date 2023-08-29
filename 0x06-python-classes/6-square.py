@@ -3,11 +3,19 @@
 class Square:
 
     def __init__(self, size=0, position=(0, 0)):
+
+        """square init
+
+        Args:
+            size: type int, new square size
+        """
+
         self.size = size
         self.position = position
 
     @property
     def size(self):
+        """get size"""
         return (self.__size)
 
     @size.setter
@@ -20,6 +28,7 @@ class Square:
 
     @property
     def position(self):
+        """get position"""
         return (self.__position)
 
     @position.setter
