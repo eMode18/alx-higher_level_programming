@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-
 """"define a class called square"""
 
 class Square:
@@ -8,7 +7,6 @@ class Square:
     def __init__(self, size):
 
         """init class
-
         Args:
             size: new square size, type int
         """

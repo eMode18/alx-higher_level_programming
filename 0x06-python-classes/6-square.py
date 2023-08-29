@@ -1,21 +1,21 @@
 #!/usr/bin/python3
+"""square class definition"""
 
 class Square:
+    """square representition"""
 
     def __init__(self, size=0, position=(0, 0)):
-
-        """square init
+         """Init the square.
 
         Args:
-            size: type int, new square size
+            size: private integer that represents new square size
         """
-
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """get size"""
+        """obtain the current area"""
         return (self.__size)
 
     @size.setter
@@ -28,28 +28,31 @@ class Square:
 
     @property
     def position(self):
-        """get position"""
+        """obtain the current square pos"""
         return (self.__position)
 
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
                 len(value) != 2 or
-                not all(isinstance(n, int) for n in value) or
-                not all(num >= 0 for num in value)):
+                not all(isinstance(x, int) for x in value) or
+                not all(x >= 0 for x in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
+        """calculate area and return the value"""
         return (self.__size * self.__size)
 
     def my_print(self):
+        """use # to graphically represent the square"""
         if self.__size == 0:
             print("")
             return
 
-        [print("") for i in range(0, self.__position[1])]
-        for val in range(0, self.__size):
-            [print(" ", end="") for dig in range(0, self.__position[0])]
-            [print("#", end="") for num in range(0, self.__size)]
+        [print("") for dig in range(0, self.__position[1])]
+        for dig in range(0, self.__size):
+            [print(" ", end="") for val in range(0, self.__position[0])]
+            [print("#", end="") for l in range(0, self.__size)]
             print("")
+

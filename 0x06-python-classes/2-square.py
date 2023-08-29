@@ -1,19 +1,16 @@
 #!/usr/bin/python3
+"""program defines a class named square"""
 
-"""square class definition"""
 
 class Square:
-    """class to represent a square"""
+    """This class will represent a square"""
 
     def __init__(self, size=0):
-
-         """square init
+        """Init the square.
 
         Args:
-            size: type int, new square size
+            size: private integer that represents new square size
         """
-
-
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:
