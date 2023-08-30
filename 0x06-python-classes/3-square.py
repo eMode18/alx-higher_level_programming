@@ -19,4 +19,3 @@ class Square:
     def area(self):
         """Return the value found after squaring size"""
         return (self.__size * self.__size)
-

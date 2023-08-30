@@ -11,4 +11,3 @@ class Square:
             size: represents the dimentions of the square
         """
         self.__size = size
-
