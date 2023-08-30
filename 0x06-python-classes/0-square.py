@@ -1,9 +1,8 @@
 #!/usr/bin/python3
+"""Square module for an empty class def"""
+
+
 class Square:
-
-    """
-    This class represents a square.
-    It currently has no attributes or methods defined.
-    """
-
+    """an empty square class declaration"""
     pass
+
