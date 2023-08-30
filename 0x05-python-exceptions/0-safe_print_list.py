@@ -1,12 +1,9 @@
 #!/usr/bin/python3
-
 def safe_print_list(my_list=[], x=0):
     """elements (x) to print
-
     Args:
         my_list (list): list containg elements to be printed
         x (int): represents number of items to print
-
     Returns:
         x printed items
     """
