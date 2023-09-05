@@ -1,0 +1,85 @@
+define a function called ``say_my_name(first_name, last_name="")``.
+
+
+Usage
+=====
+
+
+``say_my_name(...)`` should print "My name is <first_name> <last_name>".
+
+
+::
+
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+    >>> say_my_name("Borris", "Barbara")
+    My name is Borris Barbara
+
+
+::
+
+
+    >>> say_my_name("John Cena", "Juniour")
+    My name is John Cena Juniour
+
+
+```last_name``` if last_name is not provided, an empty string is
+printed as this param is optional
+
+
+::
+
+
+    >>> say_my_name("Will")
+    My name is Will
+
+
+Invalid name values
+=============
+
+
+``first_name`` and ``last_name``` are strictly strings. Else,
+raise TypeError.
+
+
+::
+
+
+    >>> say_my_name(6, "James")
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+::
+
+
+    >>> say_my_name("Bron", ["Colwill", "Bulls", "Hit"])
+    Traceback (most recent call last):
+    TypeError: last_name must be a string
+
+
+::
+
+
+    >>> say_my_name({"Bron": 6, "Kevin": 23}, 7.7)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+::
+
+
+    >>> say_my_name(None)
+    Traceback (most recent call last):
+    TypeError: first_name must be a string
+
+
+One name must be provided
+
+
+::
+
+
+    >>> say_my_name()
+    Traceback (most recent call last):
+    TypeError: say_my_name() One name must be provided: 'first_name'

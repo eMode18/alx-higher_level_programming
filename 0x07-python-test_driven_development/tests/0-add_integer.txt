@@ -1,0 +1,157 @@
+The definition of how to perform addition of two integers ``add_integer(a, b=98)``.
+
+
+``add_integer(...)``` Perform the addition of two values. For numbers,
+the ``+`` operator is used.
+
+
+::
+
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(3, 2)
+    5
+
+
+::
+
+
+    >>> add_integer(-3, 2)
+    -1
+
+
+This function can also handle floats
+
+
+::
+
+
+    >>> add_integer(2.0, 3.0)
+    5
+
+
+Before floats are added, they are cast to int
+
+
+::
+
+
+    >>> add_integer(2.9, 0.2)
+    2
+
+
+::
+
+
+    >>> add_integer(-2.9, -0.2)
+    -2
+
+
+Floats cannot be combined with values other than floats
+
+
+::
+
+
+    >>> add_integer(2.3, -3)
+    -1
+
+
+The second argument is optional and defaulted to 98 if not provided
+
+
+::
+
+
+    >>> add_integer(2)
+    100
+
+
+Non-Numbers
+===========
+
+
+``add_integer()`` function anticipated either int or float values.
+Else, a TypeError is raised
+
+::
+
+
+    >>> add_integer("hello", 3)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+
+::
+
+
+    >>> add_integer(2, "hello")
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+
+::
+
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+
+::
+
+
+    >>> add_integer(2.3, None)
+    Traceback (most recent call last):
+    TypeError: b must be an integer
+
+
+If both a and b are neither float or int values, only raise a type error
+message for the first arg
+
+
+::
+
+
+    >>> add_integer("hello", "there")
+    Traceback (most recent call last):
+    TypeError: a must be an integer
+
+
+Stop execution if either argument is infinite
+
+
+::
+
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+     
+
+
+::
+
+
+    >>> add_integer(2, float('inf'))
+    Traceback (most recent call last):
+    OverflowError: cannot convert float infinity to integer
+
+
+Stop execution if either value is NaN
+
+
+::
+
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
+
+
+::
+
+
+    >>> add_integer(2, float('nan'))
+    Traceback (most recent call last):
+    ValueError: cannot convert float NaN to integer
