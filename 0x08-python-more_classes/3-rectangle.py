@@ -59,7 +59,7 @@ class Rectangle:
             return ""
         rectObj = []
         for h in range(self.__height):
-            [rectObj.append(str(self.print_symbol)) for w in range(self.__width)]
+            [rectObj.append('#')) for w in range(self.__width)]
             if h != self.__height - 1:
                 rectObj.append("\n")
-        return "".join(rectObj) + "\n"
+        return "".join(rectObj)
