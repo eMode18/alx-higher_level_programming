@@ -62,4 +62,4 @@ class Rectangle:
             [rectObj.append('#')) for w in range(self.__width)]
             if h != self.__height - 1:
                 rectObj.append("\n")
-        return "".join(rectObj)
+        return "".join(rectObj) + ("\n")
