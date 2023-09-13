@@ -1,0 +1,90 @@
+case 0: module import
+
+>>> MyList = __import__('my_list_sorter').MyList
+>>>
+
+Senario 1: Basic usage
+
+>>> my_list = MyList()
+>>> my_list.add(1)
+>>> my_list.add(4)
+>>> my_list.add(2)
+>>> my_list.add(3)
+>>> my_list.add(5)
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>>
+
+Scenario 2: Accessing Undefined Object
+
+>>> MyList = __import__('my_list_sorter').MyList
+>>> my_list2.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'my_list2' is not defined
+>>>
+
+Scenario 3: Initializing with a List
+
+>>> a = [1, 9, 4]
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[1, 4, 9]
+>>>
+
+Scenario 4: empty list
+
+>>> a = []
+>>> my_list = MyList(a)
+>>> my_list.print_sorted()
+[]
+>>>
+
+
+Scenario 5: Unique No
+
+>>> my_list = MyList()
+>>> my_list.add(1)
+>>> my_list.print_sorted()
+[1]
+>>> print(my_list)
+[1]
+>>>
+
+Scenario 6: Numbers repeated
+
+>>> my_list2 = MyList()
+>>> my_list2.add(1)
+>>> my_list2.add(1)
+>>> my_list2.add(1)
+>>> my_list2.add(1)
+>>> my_list2.print_sorted()
+[1, 1, 1, 1]
+>>>
+
+Scenario 7: list sorting attempt
+
+>>> my_list = [1, 2, 3]
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'list' object has no attribute 'print_sorted'
+>>>
+
+Scenario 8: Non-positive numbers
+
+>>> MyList = __import__('my_list_sorter').MyList
+>>> my_list = MyList()
+>>> my_list.add(5)
+>>> my_list.add(1)
+>>> my_list.add(-1)
+>>> my_list.add(51)
+>>> my_list.add(-5)
+>>> my_list.print_sorted()
+[-5, -1, 1, 5, 51]
+>>>
+
