@@ -45,7 +45,7 @@ class Base:
         """Write the JSON serialization of a list of objects to a file.
 
         Args:
-            obj_list (list): A list of inherited Base objects to be serialized.
+            obj_list (list):  list of inherited Base objects to be serialized.
         """
         file_name = cls.__name__ + ".json"
         with open(file_name, "w") as json_file:
@@ -60,7 +60,7 @@ class Base:
         """Return the deserialization of a JSON string.
 
         Args:
-            json_str (str): A JSON string representation of a list of dictionaries.
+            json_str (str): JSON string representing  a list of dictionaries.
         Returns:
             If json_str is None or empty - an empty list.
             Otherwise - the Python list represented by json_str.
@@ -140,8 +140,9 @@ class Base:
                 else:
                     field_names = ["id", "size", "x", "y"]
                 obj_dicts = csv.DictReader(csv_file, fieldnames=field_names)
-                obj_dicts = [dict([k, int(v)] for k, v in d.items())
-                              for d in obj_dicts]
+                obj_dicts = [
+                        dict([k, int(v)] for k, v in d.items()) for
+                        d in obj_dicts]
                 return [cls.create(**d) for d in obj_dicts]
         except IOError:
             return []
@@ -188,4 +189,3 @@ class Base:
             turtle_drawer.hideturtle()
 
         turtle.exitonclick()
-

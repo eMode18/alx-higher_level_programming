@@ -2,6 +2,7 @@
 """Create a class named square"""
 from models.rectangle import Rectangle
 
+
 class Square(Rectangle):
     """Represents a geometric square shape."""
 
@@ -76,4 +77,3 @@ class Square(Rectangle):
         """Return a human-readable string representation of the square."""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y,
                                                  self.width)
-

@@ -2,6 +2,7 @@
 """create a Rectangle class."""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represents a geometric rectangle shape."""
 
@@ -97,7 +98,7 @@ class Rectangle(Base):
         """Update the attributes of the rectangle.
 
         Args:
-            *args (ints): New attribute values in the order: id, width, height, x, y.
+            *args (ints): New ordered attr values: id, width, height, x, y.
             **kwargs (dict): New attribute key-value pairs.
         """
         if args and len(args) != 0:
@@ -149,4 +150,3 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(self.id,
                                                        self.x, self.y,
                                                        self.width, self.height)
-
