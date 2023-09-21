@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a Rectangle class."""
+"""create a Rectangle class."""
 from models.base import Base
 
 class Rectangle(Base):
@@ -35,7 +35,7 @@ class Rectangle(Base):
         if type(new_width) != int:
             raise TypeError("width must be an integer")
         if new_width <= 0:
-            raise ValueError("width must be greater than 0")
+            raise ValueError("width must be > 0")
         self.__width = new_width
 
     @property
@@ -48,7 +48,7 @@ class Rectangle(Base):
         if type(new_height) != int:
             raise TypeError("height must be an integer")
         if new_height <= 0:
-            raise ValueError("height must be greater than 0")
+            raise ValueError("height must be > 0")
         self.__height = new_height
 
     @property
@@ -61,7 +61,7 @@ class Rectangle(Base):
         if type(new_x) != int:
             raise TypeError("x must be an integer")
         if new_x < 0:
-            raise ValueError("x must be greater than or equal to 0")
+            raise ValueError("x must be >= 0")
         self.__x = new_x
 
     @property
@@ -74,7 +74,7 @@ class Rectangle(Base):
         if type(new_y) != int:
             raise TypeError("y must be an integer")
         if new_y < 0:
-            raise ValueError("y must be greater than or equal to 0")
+            raise ValueError("y must be >= 0")
         self.__y = new_y
 
     def area(self):
