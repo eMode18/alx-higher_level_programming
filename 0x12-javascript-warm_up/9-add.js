@@ -1,6 +1,6 @@
 #!/usr/bin/node
 function add (a, b) {
-  let sum = a + b;
+  const sum = a + b;
   console.log(sum);
 }
 
