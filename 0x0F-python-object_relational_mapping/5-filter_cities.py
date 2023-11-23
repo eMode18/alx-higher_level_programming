@@ -13,6 +13,6 @@ if __name__ == "__main__":
                 WHERE states.name=%s""", (sys.argv[4],))
     result_set = cursor.fetchall()
     temp = list(result[0] for result in result_set)
-    print(*temp, separator=", ")
+    print(*temp, sep=", ")
     cursor.close()
     db.close()
