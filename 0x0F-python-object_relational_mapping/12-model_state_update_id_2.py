@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Give us the State object from the hbtn_0e_6_usa database based on the named argument provided
+""" Give us the State object from the hbtn_0e_6_usa database based
+on the named argument provided
 """
 import sys
 from model_state import Base, State

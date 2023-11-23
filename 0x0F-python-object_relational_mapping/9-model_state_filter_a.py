@@ -14,4 +14,4 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     db_session = Session()
     for occurrence in db_session.query(State).filter(State.name.like('%a%')):
-        print(occurrence.id, occurrence.name, separator=": ")
+        print(occurrence.id, occurrence.name, sep=": ")

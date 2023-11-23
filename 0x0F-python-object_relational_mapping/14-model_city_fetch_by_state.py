@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" Give us the State object from the hbtn_0e_6_usa database based on the named argument provided
+""" Give us the State object from the hbtn_0e_6_usa
+database based on the named argument provided
 """
 import sys
 from model_state import Base, State
@@ -15,5 +16,6 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     db_session = Session()
     for occurrence in (db_session.query(State.name, City.id, City.name)
-                     .filter(State.id == City.state_id)):
-        print(occurrence[0] + ": (" + str(occurrence[1]) + ") " + occurrence[2])
+                                 .filter(State.id == City.state_id)):
+        print(occurrence[0] + ": (" + str(occurrence[1])
+                            + ")" + occurrence[2])

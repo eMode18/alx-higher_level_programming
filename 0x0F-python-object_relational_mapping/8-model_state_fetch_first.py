@@ -17,4 +17,4 @@ if __name__ == "__main__":
     if occurrence is None:
         print("Nothing")
     else:
-        print(occurrence.id, occurrence.name, separator=": ")
+        print(occurrence.id, occurrence.name, sep=": ")

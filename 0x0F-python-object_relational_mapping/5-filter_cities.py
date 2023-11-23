@@ -5,9 +5,9 @@ import sys
 
 
 if __name__ == "__main__":
-    d_base = MySQLdb.connect(host="localhost", user=sys.argv[1],
-                         passwd=sys.argv[2], d_base=sys.argv[3], port=3306)
-    cursor = d_base.cursor()
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cursor = db.cursor()
     cursor.execute("""SELECT cities.name FROM
                 cities INNER JOIN states ON states.id=cities.state_id
                 WHERE states.name=%s""", (sys.argv[4],))
@@ -15,4 +15,4 @@ if __name__ == "__main__":
     temp = list(result[0] for result in result_set)
     print(*temp, separator=", ")
     cursor.close()
-    d_base.close()
+    db.close()
