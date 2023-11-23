@@ -10,6 +10,7 @@ from sqlalchemy import Column, Integer, String, MetaData
 init_metadata = MetaData()
 Base = declarative_base(metadata=init_metadata)
 
+
 class State(Base):
     """
     This class holds the id and name attributes of each state
