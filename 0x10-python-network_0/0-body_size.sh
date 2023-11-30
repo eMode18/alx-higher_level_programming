@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/bash
 # cURL body size: task 0
-
-curl -sI GET "$1" | grep -i "Content-Length" | cut -d " " -f2
+curl -s "$1" | wc -c
