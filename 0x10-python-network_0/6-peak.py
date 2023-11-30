@@ -10,24 +10,20 @@ def find_peak(list_of_integers):
     - If exists, peak list element, otherwise None.
     """
 
-    # Check if the list is empty
-    if not list_of_integers:
+    if list_of_integers is None or list_of_integers == []:
         return None
-
-    # Initialize low and high indices for binary search
-    low, high = 0, len(list_of_integers) - 1
-
-    # Binary search to find a peak
-    while low < high:
-        mid = (low + high) // 2
-
-        # If mid element is less than its adjacent element, search in the right half
-        if list_of_integers[mid] < list_of_integers[mid + 1]:
-            low = mid + 1
-        # Otherwise, search in the left half
-        else:
-            high = mid
-
-    # Return the found peak element
-    return list_of_integers[low]
-
+    least = 0
+    is_peak = len(list_of_integers)
+    mid = ((hi - lo) // 2) + lo
+    mid = int(mid)
+    if is_peak == 1:
+        return list_of_integers[0]
+    if is_peak == 2:
+        return max(list_of_integers)
+    if list_of_integers[mid] >= list_of_integers[mid - 1] and\
+            list_of_integers[mid] >= list_of_integers[mid + 1]:
+        return list_of_integers[mid]
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid + 1]:
+        return find_peak(list_of_integers[mid:])
+    if mid > 0 and list_of_integers[mid] < list_of_integers[mid - 1]:
+        return find_peak(list_of_integers[:mid])
