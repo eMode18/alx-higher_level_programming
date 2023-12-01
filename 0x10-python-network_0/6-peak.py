@@ -1,34 +1,26 @@
 #!/usr/bin/python3
+"""Module for Task 6: Finding a Peak"""
+
+
 def find_peak(list_of_integers):
+    """This function finds and returns a peak within an unsorted
+    list of integers.
     """
-    Peak list item
-
-    Args:
-    - list_of_integers: Unsorted integer list.
-
-    Returns:
-    - If exists, peak list element, otherwise None.
-    """
-    if list_of_integers is None or len(list_of_integers) == 0:
+    if list_of_integers == []:
         return None
 
-    smallest = 0
-    is_peak = len(list_of_integers)
+    list_length = len(list_of_integers)
+    if list_length == 1:
+        return list_of_integers[0]
+    elif list_length == 2:
+        return max(list_of_integers)
 
-    while smallest <= is_peak:
-        mid_value = (smallest + is_peak) // 2
-
-        if (mid_value == 0 or list_of_integers[mid_value]
-            >= list_of_integers[mid_value - 1]) and \
-           (mid_value == len(list_of_integers) - 1 or
-                list_of_integers[mid_value] >= list_of_integers[mid_value
-                                                                + 1]):
-            return list_of_integers[mid_value]
-
-        if mid_value < len(list_of_integers) - 1 and
-        list_of_integers[mid_value] < list_of_integers[mid_value + 1]:
-            smallest = mid_value + 1
-        else:
-            is_peak = mid_value - 1
-
-    return None
+    mid_value = int(list_length / 2)
+    peak = list_of_integers[mid_value]
+    if peak > list_of_integers[mid_value - 1]
+    and peak > list_of_integers[mid_value + 1]:
+        return peak
+    elif peak < list_of_integers[mid_value - 1]:
+        return find_peak(list_of_integers[:mid_value])
+    else:
+        return find_peak(list_of_integers[mid_value + 1:])
