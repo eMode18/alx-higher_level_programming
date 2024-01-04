@@ -19,7 +19,6 @@ request(apiUrl, (error, response, body) => {
   const movieData = JSON.parse(body);
   const charactersUrls = movieData.characters;
 
-  // Function to retrieve character names from their URLs
   const getCharacterName = (url) => {
     return new Promise((resolve, reject) => {
       request(url, (error, response, body) => {
@@ -33,7 +32,6 @@ request(apiUrl, (error, response, body) => {
     });
   };
 
-  // Iterate through character URLs and fetch character names
   Promise.all(charactersUrls.map(url => getCharacterName(url)))
     .then(characterNames => {
       characterNames.forEach(name => console.log(name));
